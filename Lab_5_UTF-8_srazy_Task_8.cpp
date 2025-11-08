@@ -38,7 +38,7 @@
 
 #include "Lab_5_UTF-8_srazy.h"
 using namespace std;
-
+/*
 struct Adress {
   wstring Country;
   wstring Region;
@@ -59,10 +59,10 @@ wstring Parse(wstring& line){
             wcout<<L"\nОшибка ввода, введите снова, без цифр"<<'\n';
             goto skip1;
             //country_polz.erase(country_polz[i]);//почему-то переполнение памяти
-            /*если надо вывести сообщение об ошибке ввода вместо
+            *//*если надо вывести сообщение об ошибке ввода вместо
             исправления ошибки и дальнейшей работы программы*/
             //wcout<<L"Ошибка ввода, ввели цифру";break;
-        } else {
+       /* } else {
             wcout<<country_polz[i];
         }
     }
@@ -76,8 +76,8 @@ wstring Parse(wstring& line){
             goto skip2;
             //region_polz.erase(region_polz[i]);
         } else {
-            wcout<<region_polz[i]/*=region_polz[i]*/;
-        }
+            wcout<<region_polz[i];*/
+     /*   }
     }
     wcout<<L"\nВведите название города в формате \n"
            "тип (пгт, село и тд) название"<<'\n';
@@ -266,40 +266,14 @@ void Unify_print_bez_struct(wstring line){
               << dlia_Street(strValue4) << " - "
               << dlia_Hous(strValue5) << '\n';
 }
-
-int main() {
+*/
+/*int main() {
     setlocale(LC_ALL, "rus");
     wstring line;
     Parse(line);
     Unify_print_struct(line);
     //Unify_print_bez_struct(line);
     return 0;
-}
+}*/
 
-Функция Parse принимает на вход текстовую строчку и пытается выделить из неё
-компоненты адреса.
-Функция Unify пытается привести компоненты адреса к каноническому виду
-(например, вместо ?пр-д Кочновского15? записать ?проезд Кочновского 15?).
-Функция Format возвращает текстовое представление адреса.
-Функции Parse и Unify, в духе C++ style guide, принимают на вход изменяемые
-параметры через указатели. Предполагается, что соотвествующие объекты типа
-Address уже созданы. В случае ошибок обработки адреса функции Parse и Unify
-могут сгенерировать сообщение ошибки.
-Алексей написал код обработки, но он почему-то не работает:
-#include "address.h"
-#include <iostream>
-#include <string>
-int main() {
- std::string line;
- Address* address;
- while (getline(std::cin, line)) {
- Parse(line, address);
- Unify(address);
- std::cout << Format(*address) << "\n";
- }
-}
-Предполагалось, что эта программа будет читать поступающие на вход строки,
-извлекать из них адреса и печатать их обработанные текстовые представления.
-В случае исключений при обработке строки программа должна напечатать просто
-?exception? (с переводом строки) и перейти к обработке следующих строк.*/
 
